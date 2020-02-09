@@ -44,7 +44,7 @@ class UsersNav extends Component {
                 />
                 <InputGroupAddon addonType='append'>
                   <Button onClick={() => this.props.getUsers(this.state.name)}>
-                    <i class='fas fa-search'></i>
+                    <i className='fas fa-search'></i>
                   </Button>
                 </InputGroupAddon>
               </InputGroup>
@@ -52,7 +52,7 @@ class UsersNav extends Component {
                 className='m-2'
                 onClick={() => this.setState({ modal: true })}
               >
-                <i class='fas fa-plus'></i>
+                <i className='fas fa-plus'></i>
               </Button>
             </Nav>
           </Collapse>

@@ -26,7 +26,7 @@ export class UsersTab extends Component {
           </thead>
           <tbody>
             {this.props.users.map(user => (
-              <tr>
+              <tr key={user._id}>
                 <td>{user.name}</td>
                 <td>{user.surName}</td>
                 <td>{user.birthPlace}</td>

@@ -24,7 +24,6 @@ class PhotosModal extends Component {
     });
   };
   handleClick = () => {
-    console.log(this.props.user);
     this.props.addPhoto(this.props.user_id, this.state.title, this.state.url);
   };
   render() {

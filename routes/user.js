@@ -45,7 +45,9 @@ router.post(
 
 router.get('/', async (req, res) => {
   try {
-    const users = await User.find();
+    const users = req.query.name
+      ? await User.find({ name: req.query.name })
+      : await User.find();
     res.json(users);
   } catch (error) {
     console.error(error.message);

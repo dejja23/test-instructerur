@@ -26,7 +26,6 @@ class UsersModal extends Component {
     });
   };
   handleClick = () => {
-    console.log(this.props.user);
     this.props.isEdit
       ? this.props.updateUser(
           this.props.user._id,

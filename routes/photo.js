@@ -36,11 +36,12 @@ router.post(
 
 router.get('/:user_id', async (req, res) => {
   try {
-    const photos = await Photo.find({ user: req.params.user_id });
-    if (!photos)
-      return res
-        .status(404)
-        .send({ msg: 'The user with the given ID has no photos.' });
+    const photos = req.query.title
+      ? await Photo.find({
+          $and: [{ user: req.params.user_id }, { title: req.query.title }]
+        })
+      : await Photo.find({ user: req.params.user_id });
+
     res.json(photos);
   } catch (error) {}
 });
